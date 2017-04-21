@@ -6,13 +6,13 @@
         id        = "com.sheridan.imm.collective"
         version   = "1.0.0">
 
-    <name>DragOnBallZ</name>
+    <name>Rebecca's Dreamworld</name>
 
     <description>
         Hello World sample application that responds to the deviceready event.
     </description>
 
-    <author href="http://www.natashasidi.com" email="natasha.sidi@gmail.com">
+    <author href="http://lulukang.ca" email="cecaakang423@gmail.com">
         this is my hood
     </author>
 
@@ -71,7 +71,8 @@
     -->
 
     <!-- Define app icon for each platform. -->
-    <icon src="icon.png" />
+    <icon src="res/icon/ios/icon-60@3x.png"         gap:platform="ios"        width="120" height="120"/>
+    <icon src="res/icon/ios/icon-60@2x.png"         gap:platform="ios"        width="180" height="180"/>
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
     <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
     <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
@@ -94,6 +95,9 @@
     <gap:splash src="res/screen/blackberry/screen-225.png"              gap:platform="blackberry" />
     <gap:splash src="res/screen/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
     <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
+    <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="res/screen/ios/screen-iphone-667h@2x.png"          gap:platform="ios"     width="750" height="1334" />
     <gap:splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
     <gap:splash src="res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />

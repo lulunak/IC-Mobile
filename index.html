@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Mobile Book</title>
+
+<script>var zon = true; // true for comments from zim code</script>
+
+<script src="libraries/create.js"></script> 
+<script src="libraries/zim.js"></script>
+<script src="scripts/view.js"></script>
+<script src="scripts/controller.js"></script>
+<script src="scripts/model.js"></script>
+
+<script>
+
+
+var scaling = "full"; // makes stage the window size but does not scale content
+var width = null;
+var height = null;
+var color = "#B39DDB";
+var frame = new zim.Frame(scaling, width, height, color); // see docs for more options and info
+frame.on("ready", function() {
+    zog("ready from ZIM Frame");
+
+	var stage = frame.stage;
+	var stageW = frame.width;
+	var stageH = frame.height;
+	frame.loadAssets([
+		"logo.png",
+		"1.png",
+		"2.png",
+		"3.png",
+		"4.png",
+		"5.png",
+		"6.png",
+		"thanks.png"
+	], "assets/");
+	
+frame.on("complete",function(){
+	var layoutManager = new zim.LayoutManager();
+
+	// var m = app.makeModel();
+
+	var p = app.makePages(stage, stageW, stageH, layoutManager, frame);
+	// PAGES 
+	var pages = new zim.Pages({
+		holder:stage,
+		pages:[
+			{page: p.page1, swipe:[null, p.page2, null,null]},
+			{page: p.page2, swipe:[p.page1, p.page3, null,null]},
+			{page: p.page3, swipe:[p.page2, p.page1, null,null]}
+			
+		],
+		transition:"slide",
+   		speed:1000
+	});
+	pages.addTo(stage);
+
+	// CONTROLLER 
+	var control = app.makeController(stage, p, pages,frame);
+
+	frame.on("resize", function(){
+		layoutManager.resize();
+		pages.resize();
+	});
+
+    frame.on("orientation", function(e) {		
+			stage.update();
+	}); // end of orientation
+
+	stage.update();
+
+   });
+
+
+}, null, true); // end of ready - only run once (true)
+</script>
+</head>
+
+<body>
+<!-- canvas with id="myCanvas" is made by zim Frame -->
+</body>
+</html>
